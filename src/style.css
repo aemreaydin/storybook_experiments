@@ -1,0 +1,105 @@
+:root {
+  --background: rgb(42, 43, 44);
+  --text: rgb(255, 255, 255);
+  --black-text: rgb(27, 27, 27);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+  color: #eee;
+}
+
+#root {
+  margin: 5rem auto;
+  width: 60vw;
+}
+
+.todo-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  font-size: 2rem;
+  background-color: aliceblue;
+  color: var(--black-text);
+
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.todo-input:focus {
+  border: 1px solid red;
+  animation: outline 1s;
+}
+
+.todo-input:active {
+  border: 1px solid red;
+  animation: outline 1s;
+}
+
+.todos {
+  font-size: 1.6rem;
+}
+
+.todo-item {
+  user-select: none;
+  padding: 1rem;
+  list-style-type: none;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(179, 179, 179);
+  font-size: 1.6rem;
+}
+.todo-item *:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.checkbox {
+  appearance: none;
+}
+.checkbox:before {
+  content: '';
+  top: 4.5px;
+  left: 3px;
+
+  width: 1rem;
+  height: 1rem;
+  outline: none;
+  transform: rotate(-45deg);
+  border: 3px solid #fcfff4;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border: 0.1rem solid white;
+  display: block;
+
+  box-shadow: 0 0 0.5rem 0.1rem transparent;
+  transition: box-shadow 0.25s;
+}
+.checkbox-label:hover {
+  box-shadow: 0 0 0.5rem 0.2rem rgba(255, 255, 255, 0.5);
+}
+.checkbox:checked + .checkbox-label:before {
+  content: '';
+  opacity: 1;
+}
+.checkbox:not(:checked) + .checkbox-label:hover::before {
+  content: '';
+  opacity: 0.3;
+}
+
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.w-full {
+  width: 100%;
+}
